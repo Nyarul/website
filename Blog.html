@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blog - Clothing Bundles</title>
+    <link rel="stylesheet" href="Home.css">
+    <style>
+        .blog-section {
+            margin: 40px 0;
+        }
+
+        .blog-post {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s;
+        }
+
+        .blog-post:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-post img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .sidebar {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .subscribe {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .subscribe input[type="email"] {
+            padding: 10px;
+            width: 70%;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .subscribe button {
+            padding: 10px 20px;
+            background-color: #ff532b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .subscribe button:hover {
+            background-color: #34563a;
+        }
+
+        /* Styles for button-like list items */
+        .button-list {
+            display: flex;
+            flex-wrap: wrap;
+            /* Ensures items wrap if there's not enough space */
+            gap: 10px;
+            /* Adds spacing between the buttons */
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .button-list li {
+            margin: 0;
+        }
+
+        .button-list a {
+            display: inline-block;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #007bff;
+            /* Button background color */
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-list a:hover {
+            background-color: #0056b3;
+            /* Hover effect */
+        }
+
+        /* Hidden content style */
+        .hidden-content {
+            display: none;
+            /* Initially hide the additional content */
+        }
+
+        header .container .row .col-4 .blog-post image {
+            width: 1000px;
+            height: 180px;
+            margin: 100%;
+        }
+
+        .sidebar {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" width="125px" alt="Clothing Bundles Logo">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="Home.html" class="button">Home</a></li>
+                        <li><a href="shop.html" class="button">Shop</a></li>
+                        <li><a href="Sell.html" class="button">Sell</a></li>
+                        <li><a href="about.html" class="button">About Us</a></li>
+                        <li><a href="Blog.html" class="button active">Blog</a></li>
+                        <li><a href="FAQs.html" class="button">FAQs</a></li>
+                        <li><a href="Profile.html" class="button">Profile</a></li>
+                    </ul>
+                </nav>
+                <a href="" class="button1"><img src="images/cart.png" width="80px" height="80px" alt="Cart"></a>
+            </div>
+
+            <!-- Blog Section -->
+            <div class="blog-section">
+                <h1 style="text-align:center;">Our Latest Blog Posts</h1>
+
+                <!-- Blog Post Example -->
+                <div class="row">
+                    <div class="col-4">
+                        <div class="blog-post">
+                            <img src="images/blog1.jpg" alt="Blog Post Image">
+                            <h2>5 Sustainable Fashion Tips</h2>
+                            <p style="color: black;" style="font-size: larger;">Discover how you can make your wardrobe
+                                more sustainable with these five easy tips.</p>
+                            <!-- Hidden content -->
+                            <p id="content1" class="hidden-content" style="color: black;" style="font-size: larger;">
+                                From choosing the right materials to recycling old clothes, we cover it all!</p><br>
+                            <!-- Read More button -->
+                            <span id="readMore1" class="button read-more-button">Read More</span>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="blog-post">
+                            <img src="images/blog2.jpg" alt="Blog Post Image">
+                            <h2>The Rise of Thrift Shopping</h2>
+                            <p style="color: black;" style="font-size: larger;">Thrift shopping is not just a trend;
+                                it's a lifestyle!</p>
+                            <!-- Hidden content -->
+                            <p id="content2" class="hidden-content" style="color: black;" style="font-size: larger;">
+                                Learn why more people are opting for second-hand clothing and how it benefits the
+                                environment.</p><br>
+                            <!-- Read More button -->
+                            <span id="readMore2" class="button read-more-button">Read More</span>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="blog-post">
+                            <img src="images/blog3.jpg" alt="Blog Post Image">
+                            <h2>Fashion Trends to Watch in 2025</h2>
+                            <p style="color: black;" style="font-size: larger;">Stay ahead of the curve with our
+                                predictions for the top fashion trends of the upcoming year.</p>
+                            <!-- Hidden content -->
+                            <p id="content3" class="hidden-content" style="color: black;" style="font-size: larger;">Get
+                                ready to refresh your wardrobe!</p><br>
+                            <!-- Read More button -->
+                            <span id="readMore3" class="button read-more-button">Read More</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- Sections for Categories and Recent Posts -->
+                <section id="sustainabilitySection">
+                    <h2>Sustainability Tips</h2>
+                    <p style="color: black; font-size: larger;">Prioritize quality over quantity, support eco-friendly
+                        companies, and rent or buy used items for special events. Reduce the number of times you wash
+                        your clothing, use eco-friendly detergents, let them air dry, and learn how to do basic repairs.
+                        Increase their lifespan by upcycling or trading, and properly get rid of worn-out things by
+                        recycling or donating them.</p>
+                </section>
+                 <br><br><br>
+                <section id="fashionTipsSection">
+                    <h2>Fashion Tips</h2>
+                    <p style="color: black; font-size: larger;">To create adaptable ensembles, mix and match your
+                        clothing, experiment with layering, and invest in classic items. Make mindful accessory choices,
+                        wear what gives you confidence, and pick colors and designs that go well with your personality.
+                    </p>
+                </section>
+                <br><br><br>
+                <section id="trendsSection">
+                    <h2>Trends Overview</h2>
+                    <p style="color: black; font-size: larger;">Follow style blogs, influencers, and fashion weeks to
+                        stay abreast of major trends. Bold colors, standout pieces, eco-friendly textiles, and a blend
+                        of classic and contemporary designs are common elements of current trends.</p>
+                </section>
+                <br><br><br>
+                <section id="lifestyleSection">
+                    <h2>Lifestyle Insights</h2>
+                    <p style="color: black; font-size: larger;">Prioritize self-care, personal development, and
+                        thoughtful wardrobe choices to adopt a balanced lifestyle. To improve both style and well-being,
+                        include eco-friendly practices, pursue imaginative pastimes, and prioritize wellbeing.</p>
+                </section>
+                <br><br><br>
+                <!-- Recent Posts Sections -->
+                <section id="vintageClothingSection">
+                    <h2>How to Style Vintage Clothing</h2>
+                    <p style="color: black; font-size: larger;">To get a well-balanced style, combine classic items with
+                        contemporary essentials. Emphasize statement pieces, like as a dress or jacket from the past,
+                        add modern accents, and adjust the fit for a professional look.</p>
+                </section>
+                <br><br><br>
+                <section id="capsuleWardrobesSection">
+                    <h2>The Benefits of Capsule Wardrobes</h2>
+                    <p style="color: black; font-size: larger;">By encouraging conscientious consumption, saving time,
+                        and lessening choice fatigue, capsule wardrobes make your life easier. In order to reduce waste
+                        and promote sustainability, they advise investing in high-quality, adaptable components that can
+                        be combined and rearranged.</p>
+                </section>
+                <br><br><br>
+                <section id="fashionInfluencersSection">
+                    <h2>Top Fashion Influencers to Follow</h2>
+                    <ul>
+                        <li>Chiara Ferragni: An Italian entrepreneur and fashion blogger known for her blog 'The Blonde
+                            Salad,' Chiara has a massive following and collaborates with major fashion brands.</li>
+                        <li>Dixie D’Amelio: An American singer and social media personality who gained fame on TikTok,
+                            Dixie has ventured into fashion, influencing millions with her style.</li>
+                        <li>Olivia Palermo: An American socialite, fashion influencer, and entrepreneur, Olivia is
+                            renowned for her impeccable style and has been a front-row fixture at fashion shows
+                            worldwide.</li>
+                    </ul>
+                </section>
+
+
+            </div>
+
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2025 Thrift and Bundle. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript for Read More functionality -->
+    <script type="text/javascript">
+        document.querySelectorAll('.read-more-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const contentId = this.id.replace('readMore', 'content');
+                const content = document.getElementById(contentId);
+
+                if (content.style.display === 'none' || content.style.display === '') {
+                    content.style.display = 'block';
+                    this.textContent = 'Show Less'; // Change button text
+                } else {
+                    content.style.display = 'none';
+                    this.textContent = 'Read More'; // Change button text back
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
