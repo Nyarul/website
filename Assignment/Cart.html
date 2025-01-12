@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cart | Bundle & Thrift</title>
+        <link rel="stylesheet" href="Home.css">
+        <link href="https://fonts.googleapis.com/css2?
+        family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <style>
+        body{
+        font-family: 'Poppins', sans-serif;
+        background: radial-gradient(#fff, rgb(236, 77, 77));
+    }
+
+        .cart-container {
+            width: 80%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex-grow: 1; /* Ensures it takes up available space */
+        }
+
+        .header {
+            width: 100%;
+            background: radial-gradient(#fff, rgb(236, 77, 77));
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .cart-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .item-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .item-bundle {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .item-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .quantity input {
+            width: 40px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .remove-btn {
+            color: #d9534f;
+            cursor: pointer;
+        }
+
+        .summary {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .total-price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .checkout-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .checkout-btn:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const cartItemsContainer = document.querySelector(".cart-container");
+    const totalPriceElement = document.querySelector(".total-price");
+
+    function calculateTotalPrice() {
+        let total = 0;
+        const cartItems = document.querySelectorAll(".cart-item");
+        cartItems.forEach(item => {
+            const quantityInput = item.querySelector(".quantity input");
+            const itemPrice = parseFloat(item.getAttribute("data-price"));
+            const quantity = parseInt(quantityInput.value, 10);
+            total += itemPrice * quantity;
+        });
+        totalPriceElement.textContent = `Total: MYR ${total.toFixed(2)}`;
+    }
+
+    function attachEventListeners(item) {
+        const removeBtn = item.querySelector(".remove-btn");
+        const quantityInput = item.querySelector(".quantity input");
+
+        quantityInput.addEventListener("input", () => {
+            calculateTotalPrice();
+        });
+
+        removeBtn.addEventListener("click", () => {
+            item.remove();
+            calculateTotalPrice();
+        });
+    }
+
+    const initialCartItems = document.querySelectorAll(".cart-item");
+    initialCartItems.forEach(item => attachEventListeners(item));
+
+    calculateTotalPrice();
+});
+
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" width="125px">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="Home.html" class="button">Home</a></li>
+                        <li><a href="shop.html" class="button">Shop</a></li>
+                        <li><a href="Sell.html" class="button">Sell</a></li>
+                        <li><a href="about.html" class="button">About Us</a></li>
+                        <li><a href="Blog.html" class="button">Blog</a></li>
+                        <li><a href="FAQs.html" class="button">FAQs</a></li>
+                        <li><a href="Profile.html" class="button">Profile</a></li>
+                    </ul>
+                </nav>
+                <a href="Cart.html" class="button1"><img src="images/cart.png" width="px" height="80px" ></a>
+                
+            </div>
+            
+    <div class="cart-container">
+        <h1 class="cart-title">Your Cart</h1>
+
+        <!-- Cart Items -->
+        <div class="cart-item" data-price="20">
+            <div class="item-details">
+                <img src="images/productA2.jpg" alt="Bundle Image" class="item-image">
+                <div>
+                    <div class="item-name">Converse Shoes HighCut</div>
+                    <div class="item-price">MYR20.00</div>
+                </div>
+            </div>
+            <div class="item-actions">
+                <div class="quantity">
+                    <input type="number" value="1" min="1">
+                </div>
+                <div class="remove-btn">Remove</div>
+            </div>
+        </div>
+        
+        <div class="cart-item" data-price="29.50">
+            <div class="item-details">
+                <img src="images/productD.jpg" alt="New Bundle Image" class="item-image">
+                <div>
+                    <div class="item-name">Stay Cold Premium</div>
+                    <div class="item-price">MYR29.50</div>
+                </div>
+            </div>
+            <div class="item-actions">
+                <div class="quantity">
+                    <input type="number" value="1" min="1">
+                </div>
+                <div class="remove-btn">Remove</div>
+            </div>
+        </div>
+        
+        <div class="cart-item" data-price="20.50">
+            <div class="item-details">
+                <img src="images/productA4.jpg" alt="New Bundle Image" class="item-image">
+                <div>
+                    <div class="item-name">Cargo Pants</div>
+                    <div class="item-price">MYR20.50</div>
+                </div>
+            </div>
+            <div class="item-actions">
+                <div class="quantity">
+                    <input type="number" value="1" min="1">
+                </div>
+                <div class="remove-btn">Remove</div>
+            </div>
+        </div>
+        
+
+        <!-- Summary -->
+        <div class="summary">
+            <div class="total-price">Total: MYR70.00</div>
+            <a href="proceedpayment-1.html" class="checkout-btn">Proceed to Checkout</a>
+        </div>
+        
+</body>
+</html>

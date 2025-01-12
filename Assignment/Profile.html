@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Bundle & Thrift</title>
+    <link rel="stylesheet" href="Home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" width="125px">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="Home.html" class="button">Home</a></li>
+                        <li><a href="shop.html" class="button">Shop</a></li>
+                        <li><a href="Sell.html" class="button">Sell</a></li>
+                        <li><a href="about.html" class="button">About Us</a></li>
+                        <li><a href="Blog.html" class="button">Blog</a></li>
+                        <li><a href="FAQs.html" class="button">FAQs</a></li>
+                        <li><a href="Profile.html" class="button">Profile</a></li>
+                    </ul>
+                </nav>
+                <a href="Cart.html" class="button1"><img src="images/cart.png" width="px" height="80px" ></a>
+                
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>This Is Best For<br>Shopping Bundle!</h1>
+                    <a href="" class="button">Explore Now &#8594;</a>
+                </div>
+                <div class="col-2">
+                    <img src="images/image1.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>Customer Profile</h1>
+        </div>
+        <div class="profile-content">
+            <div class="profile-row">
+                <span class="profile-label">Name:</span>
+                <span id="customer-name"></span>
+            </div>
+            <div class="profile-row">
+                <span class="profile-label">Email:</span>
+                <span id="customer-email"></span>
+            </div>
+            <div class="profile-row">
+                <span class="profile-label">Phone:</span>
+                <span id="customer-phone"></span>
+            </div>
+            <div class="profile-row">
+                <span class="profile-label">Address:</span>
+                <span id="customer-address"></span>
+            </div>
+            <div class="profile-row">
+                <a href="#" class="edit-button" onclick="editProfile()">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Thrift and Bundle. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function editProfile() {
+            const name = prompt("Enter new name:", document.getElementById('customer-name').innerText);
+            if (name !== null) document.getElementById('customer-name').innerText = name;
+
+            const email = prompt("Enter new email:", document.getElementById('customer-email').innerText);
+            if (email !== null) document.getElementById('customer-email').innerText = email;
+
+            const phone = prompt("Enter new phone number:", document.getElementById('customer-phone').innerText);
+            if (phone !== null) document.getElementById('customer-phone').innerText = phone;
+
+            const address = prompt("Enter new address:", document.getElementById('customer-address').innerText);
+            if (address !== null) document.getElementById('customer-address').innerText = address;
+        }
+    </script>
+</body>
+</html>

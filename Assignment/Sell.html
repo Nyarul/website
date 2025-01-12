@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sell - Clothing Bundles</title>
+    <link rel="stylesheet" href="Home.css">
+    <style>
+        /* Full page background color */
+        body {
+            background-color: rgb(236, 77, 77); /* Same as header */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: (#fff, rgb(236, 77, 77));
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar{
+            display:flex ;
+            align-items: center;
+            padding: 20px;
+        }
+        .navbar ul {
+            list-style-type: none;
+            display: inline-block;
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #0056b3;
+        }
+
+        .navbar .logo img {
+            width: 125px;
+        }
+
+        /* Sell form container */
+        .sell-form-container {
+            background-color: white;
+            width: 50%;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff2600;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #34563a;
+        }
+
+        /* Popup Modal Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            width: 400px;
+            margin: auto;
+        }
+
+        .popup h3 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .popup-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" width="125px">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Home.html" class="button">Home</a></li>
+                    <li><a href="shop.html" class="button">Shop</a></li>
+                    <li><a href="Sell.html" class="button">Sell</a></li>
+                    <li><a href="about.html" class="button">About Us</a></li>
+                    <li><a href="Blog.html" class="button">Blog</a></li>
+                    <li><a href="FAQs.html" class="button">FAQs</a></li>
+                    <li><a href="Profile.html" class="button">Profile</a></li>
+                </ul>
+            </nav>
+            <a href="Cart.html" class="button1"><img src="images/cart.png" width="px" height="80px" ></a>
+        </div>
+    </div>
+
+    <!-- Sell Item Form -->
+    <div class="sell-form-container">
+        <h2>List Your Item for Sale</h2>
+        <form id="sell-form" action="submit_item.php" method="POST" enctype="multipart/form-data">
+            <label for="item-name">Item Name:</label><br>
+            <input type="text" id="item-name" name="item-name" required><br>
+
+            <label for="item-description">Item Description:</label><br>
+            <textarea id="item-description" name="item-description" required></textarea><br>
+
+            <label for="item-price">Item Price (MYR):</label><br>
+            <input type="number" id="item-price" name="item-price" required><br>
+
+            <label for="item-quantity">Item Quantity:</label><br>
+            <input type="number" id="item-quantity" name="item-quantity" required><br>
+
+            <label for="item-image">Item Image:</label><br>
+            <input type="file" id="item-image" name="item-image" required><br>
+
+            <button type="submit">Submit Item</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 Thrift and Bundle. All rights reserved.</p>
+    </footer>
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h3>Item Uploaded Successfully!</h3>
+            <button class="popup-button" onclick="window.location.href='sell.html'">Go Back to Sell Page</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("sell-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting immediately
+
+            // Simulate form submission and successful upload
+            setTimeout(function() {
+                // Show the success popup
+                document.getElementById("popup").style.display = "flex";
+            }, 1000); // Simulate a delay for form submission
+        });
+    </script>
+</body>
+
+</html>

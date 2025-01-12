@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Clothing Bundles</title>
+    <link rel="stylesheet" href="Home.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+        .explore-button {
+            cursor: pointer;
+            color: #ff532b;
+            text-decoration: underline;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .about-section .row .col-2{
+            font-weight: bold;
+            font-size: large;
+            text-align: center;
+           
+        }
+        .header .container .row .col-3 .card{
+            font-weight: bold ;
+            font-size: large;
+            text-align: center;
+        }
+
+        .header .container .row .col-3 .card p{
+            color: black;
+        }
+
+        .header .container .row .col-3 .card img{
+            width: 200px;
+            height: 180px;
+            border-radius: 5%;
+            border: 2px solid black ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" width="125px" alt="Clothing Bundles Logo">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="Home.html" class="button">Home</a></li>
+                        <li><a href="shop.html" class="button">Shop</a></li>
+                        <li><a href="Sell.html" class="button">Sell</a></li>
+                        <li><a href="about.html" class="button active">About Us</a></li>
+                        <li><a href="Blog.html" class="button">Blog</a></li>
+                        <li><a href="FAQs.html" class="button">FAQs</a></li>
+                        <li><a href="Profile.html" class="button">Profile</a></li>
+                    </ul>
+                </nav>
+                <a href="Cart.html" class="button1"><img src="images/cart.png" width="80px" height="80px" alt="Cart"></a>
+            </div>
+
+            <!-- About Us Section -->
+            <div class="about-section">
+                <div class="row">
+                    <div class="col-2">
+                        <h1>About Us</h1>
+                        <p style="color: black;" >Welcome to Bundles of Clothes! We are excited to have you join us as we set out to transform your perception of fashion. Our mission at Clothing Bundles extends beyond simply selling clothes; we are committed to selecting the best range of stylish clothing that suits a wide range of tastes and preferences while maintaining competitive costs that enable everyone to afford high-quality fashion.</p>
+                        <p style="color: black;" id="moreText" class="hidden">Come along on this thrilling adventure to a more sustainable way of living! By working together, we can make well-informed decisions that help the environment as well as our wardrobes. Discover how you can contribute to a greener planet while expressing your individual style by perusing our products today. We at Clothing Bundles think that fashion should be a positive force, and with your help, we can keep pushing for sustainable fashion to become the standard rather than the exception.
+                            This is where your road to fashionable sustainability begins  let's work together to change things!</p>
+                        <span id="exploreMoreButton" class="explore-button">Explore More</span>
+                    </div>
+                    <div class="col-2">
+                        <img src="images/image1.jpg" alt="About Us Image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Team Section -->
+            <h2 style="text-align:center; margin: 40px 0;">Meet Our Team</h2>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <img src="images/team1.jpg" alt="Our Leader ">
+                        <h3>Shahrul Aiman</h3>
+                        <p>Manager</p>
+                        <p>The Braviest.</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img src="images/team2.jpg" alt=" Member 1">
+                        <h3>Syafiq</h3>
+                        <p>Art Director</p>
+                        <p>The Strongest.</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img src="images/team3.jpg" alt=" Member 2">
+                        <h3>'Azim Muhai</h3>
+                        <p>Marketing Manager</p>
+                        <p>The Big.</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img src="images/team4.jpg" alt=" Member 3">
+                        <h3>Kamal Arif</h3>
+                        <p>Marketing Manager</p>
+                        <p>The Jokers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials Section -->
+            <h2 style="text-align:center; margin: 40px 0;">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-4">
+                    <blockquote>"Clothing Bundles has transformed my wardrobe! I love the variety and quality!" - Raziq Mat Zin.</blockquote>
+                </div>
+                <div class="col-4">
+                    <blockquote>"A fantastic shopping experience! The customer service is top-notch." - Ariiq Zamani.</blockquote>
+                </div>
+                <div class="col-4">
+                    <blockquote>"I appreciate the focus on sustainability. It makes me feel good about my purchases." - Adli Juniors.</blockquote>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2025 Thrift and Bundle. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript for Explore More functionality -->
+    <script type="text/javascript">
+        document.getElementById("exploreMoreButton").onclick = function() {
+            var moreText = document.getElementById("moreText");
+            if (moreText.classList.contains("hidden")) {
+                moreText.classList.remove("hidden");
+                this.textContent = "Show Less";
+            } else {
+                moreText.classList.add("hidden");
+                this.textContent = "Explore More";
+            }
+        };
+    </script>
+
+</body>
+</html>
